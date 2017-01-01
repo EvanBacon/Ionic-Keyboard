@@ -1,0 +1,11 @@
+<!--typing area-->
+<textarea cols="45" rows="5" readonly></textarea>
+
+<div id="keyboard">
+  <!--lowercase keyboard-->
+  <div id="{{is_alphabetical ? 'lowercase' : 'numbers'}}">
+    <div class="row" *ngFor='let row of current_keys'>
+      <ios-keyboard-key *ngFor='let key of row' symbol='{{key.key}}' color='{{key.color}}' (select)='select($event)'></ios-keyboard-key>
+    </div>
+  </div>
+</div>
